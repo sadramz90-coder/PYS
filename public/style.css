@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== صفحه ورود ===== */
+#login-screen {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت ذرات طلایی با CSS */
+#login-screen::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    animation: goldenGlow 10s infinite alternate;
+}
+
+@keyframes goldenGlow {
+    0% { transform: translate(-10%, -10%) scale(1); }
+    100% { transform: translate(10%, 10%) scale(1.2); }
+}
+
+.login-container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 50px;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 0 80px rgba(212, 175, 55, 0.1);
+    animation: floatIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes floatIn {
+    0% { opacity: 0; transform: translateY(-40px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.golden-logo {
+    font-size: 70px;
+    display: block;
+    margin-bottom: 10px;
+    animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    50% { text-shadow: 0 0 60px rgba(212, 175, 55, 0.8); }
+}
+
+.glow-text {
+    font-size: 48px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #d4af37, #ffd700, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+    letter-spacing: 8px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin: 10px 0 30px 0;
+    font-weight: 400;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#username-input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+    padding: 15px 25px;
+    width: 280px;
+    color: #e0d5b0;
+    font-size: 14px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.4s;
+    text-align: center;
+}
+
+#username-input:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+#username-input::placeholder {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.golden-btn {
+    background: linear-gradient(135deg, #d4af37, #f5d100);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    color: #0a0a0a;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.4s;
+    width: 280px;
+    text-transform: uppercase;
+}
+
+.golden-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+}
+
+.credit {
+    margin-top: 30px;
+    color: #444;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.sadra-name {
+    color: #d4af37;
+    font-weight: 700;
+    letter-spacing: 4px;
+    animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* ===== صفحه چت ===== */
+#chat-screen {
+    width: 100%;
+    height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.online-dot {
+    width: 10px;
+    height: 10px;
+    background: #00ff88;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.chat-title {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.golden-badge {
+    color: #d4af37;
+    font-size: 20px;
+    padding: 5px 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.logout-btn {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    color: #ff4444;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+/* ===== پیام‌ها ===== */
+#message-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: radial-gradient(circle at 50% 0%, #111111 0%, #0a0a0a 100%);
+}
+
+/* اسکرول بار طلایی */
+#message-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+#message-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+#message-container::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 12px 20px;
+    border-radius: 20px;
+    animation: messageSlide 0.4s ease-out;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+@keyframes messageSlide {
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.message.own {
+    align-self: flex-end;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom-right-radius: 5px;
+    color: #e0d5b0;
+}
+
+.message.other {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom-left-radius: 5px;
+    color: #b0a890;
+}
+
+.message .msg-user {
+    font-weight: 700;
+    color: #d4af37;
+    font-size: 11px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.message .msg-time {
+    font-size: 8px;
+    color: #555;
+    margin-top: 6px;
+    display: block;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+/* ===== فوتر چت ===== */
+.chat-footer {
+    flex-shrink: 0;
+    padding: 15px 30px 25px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.typing-indicator {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+    height: 20px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.typing-indicator.active {
+    opacity: 1;
+    color: #d4af37;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#message-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 50px;
+    padding: 14px 20px;
+    color: #e0d5b0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.4s;
+}
+
+#message-input:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.05);
+}
+
+.send-btn {
+    background: linear-gradient(135deg, #d4af37, #f5d100);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #0a0a0a;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+/* ===== پیام سیستم ===== */
+.system-msg {
+    text-align: center;
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 10px;
+    border-top: 1px solid rgba(212, 175, 55, 0.05);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+    margin: 5px 0;
+    opacity: 0.7;
+}
