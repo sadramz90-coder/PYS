@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYS · Golden Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- پرده ورود سلطنتی -->
+    <div id="login-screen">
+        <div class="login-container">
+            <div class="golden-logo">⚜️</div>
+            <h1 class="glow-text">PYS</h1>
+            <p class="subtitle">محفل طلایی مکالمات</p>
+            <div class="input-group">
+                <input type="text" id="username-input" placeholder="نام سلطنتی خود را وارد کن..." maxlength="15">
+                <button id="join-btn" class="golden-btn">✦ ورود به قلمرو ✦</button>
+            </div>
+            <div class="credit">Design by <span class="sadra-name">S A D R A</span></div>
+        </div>
+    </div>
+
+    <!-- صفحه چت (در ابتدا مخفی) -->
+    <div id="chat-screen" style="display:none;">
+        <div class="chat-header">
+            <div class="header-left">
+                <span class="online-dot"></span>
+                <span class="chat-title">⛓️ PYS · آنلاین</span>
+            </div>
+            <div class="header-right">
+                <span id="user-badge" class="golden-badge">👑</span>
+                <button id="logout-btn" class="logout-btn">✕</button>
+            </div>
+        </div>
+        
+        <div id="message-container">
+            <!-- پیام‌ها اینجا می‌آیند -->
+        </div>
+
+        <div class="chat-footer">
+            <div class="typing-indicator" id="typing-indicator">⚜️ کسی در حال نوشتن است...</div>
+            <div class="input-row">
+                <input type="text" id="message-input" placeholder="پیام طلایی خود را بنویس...">
+                <button id="send-btn" class="send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
